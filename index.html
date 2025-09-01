@@ -1,0 +1,496 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoanPro – Professional Loan Simulator (USA)</title>
+  <meta name="description" content="Professional US-focused loan simulator: estimate payments, APR, total cost, amortization schedule, and compare offers with credit-score tiers." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+ <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styless.css" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="#" class="logo">loansimulator<span>usa</span></a>
+    <nav class="main-nav" id="main-nav">
+      <ul>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="index.html">Simulator</a></li>
+        <li><a href="index.html">Schedule</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Professional US Loan Simulator</h1>
+        <p>Estimate monthly payments, APR, and total cost. Export a full amortization schedule.</p>
+        <a href="#simulator" class="btn-cta">Get Started</a>
+      </div>
+    </section>
+
+    <!-- CALCULATOR -->
+    <section class="calculator" id="simulator">
+      <div class="card">
+        <div class="tabs">
+          <button class="active" data-cat="mortgage">Mortgage</button>
+          <button data-cat="personal">Personal</button>
+          <button data-cat="auto">Auto</button>
+          <button data-cat="business">Business</button>
+        </div>
+
+        <!-- Common Inputs -->
+        <div class="inputs">
+          <label>Duration (years): <span id="durationVal">5</span></label>
+          <input type="range" id="duration" min="1" max="30" step="1" value="5" />
+        </div>
+        <div class="inputs">
+          <label>Credit Score (FICO):</label>
+          <input type="number" id="creditScore" min="300" max="850" value="700" />
+        </div>
+        <div class="inputs">
+          <label><input type="checkbox" id="autoPay" /> Include Auto-Pay Discount (&minus;0.50&nbsp;%)</label>
+        </div>
+
+        <!-- Mortgage Fields -->
+        <div id="mortgage-fields">
+          <div class="inputs">
+            <label>Property Price ($): <span id="priceVal">350000</span></label>
+            <input type="range" id="price" min="50000" max="1000000" step="5000" value="350000" />
+          </div>
+          <div class="inputs">
+            <label>Down Payment (%): <span id="dpVal">10</span>%</label>
+            <input type="range" id="downPayment" min="0" max="50" step="1" value="10" />
+          </div>
+          <div class="inputs">
+            <label>Profile:</label>
+            <select id="profile">
+              <option value="standard" selected>Standard</option>
+              <option value="low">Economy</option>
+              <option value="premium">Premium</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Personal Fields -->
+        <div id="personal-fields" style="display:none;">
+          <div class="inputs">
+            <label>Requested Amount ($):</label>
+            <input type="number" id="personalAmount" min="1000" placeholder="e.g. 10000" />
+          </div>
+        </div>
+
+        <!-- Auto Fields -->
+        <div id="auto-fields" style="display:none;">
+          <div class="inputs">
+            <label>Vehicle Price ($): <span id="autoPriceVal">20000</span></label>
+            <input type="range" id="autoPrice" min="5000" max="100000" step="1000" value="20000" />
+          </div>
+          <div class="inputs">
+            <label>Down Payment (%): <span id="autoDpVal">10</span>%</label>
+            <input type="range" id="autoDownPayment" min="0" max="100" step="1" value="10" />
+          </div>
+        </div>
+
+        <!-- Business Fields -->
+        <div id="business-fields" style="display:none;">
+          <div class="inputs">
+            <label>Loan Amount ($):</label>
+            <input type="number" id="bizAmount" min="25000" placeholder="e.g. 50000" />
+          </div>
+        </div>
+
+        <!-- Bank Selector -->
+<div class="inputs">
+  <label for="bankSelect">Bank:</label>
+  <div class="custom-select" id="bankSelect">
+    <div id="selectedBank"
+         class="selected-bank"
+         tabindex="0"
+         aria-haspopup="listbox"
+         aria-expanded="false"
+         data-mortgage-rate="0.053"
+         data-personal-rate="0.1399"
+         data-auto-rate="0.0685"
+         data-biz-rate="0.0899">
+      <img src="images/bank-of-america.svg" alt="Bank of America logo" role="img" />
+      <span class="bank-name">Bank of America</span>
+    </div>
+    <ul id="bankOptions" class="bank-options hidden" role="listbox" aria-labelledby="selectedBank">
+      <li role="option" data-bank="Bank of America"        data-mortgage-rate="0.0530" data-personal-rate="0.1399" data-auto-rate="0.0685" data-biz-rate="0.0899">
+        <img src="images/bank-of-america.svg" alt="Bank of America logo" role="img" /><span class="bank-name">Bank of America</span>
+      </li>
+      <li role="option" data-bank="Chase (JPMorgan Chase)" data-mortgage-rate="0.0575" data-personal-rate="0.1299" data-auto-rate="0.0699" data-biz-rate="0.0825">
+        <img src="images/chase.svg" alt="Chase logo" role="img" /><span class="bank-name">Chase</span>
+      </li>
+      <li role="option" data-bank="Wells Fargo"            data-mortgage-rate="0.0550" data-personal-rate="0.1499" data-auto-rate="0.0724" data-biz-rate="0.0925">
+        <img src="images/wells-fargo.svg" alt="Wells Fargo logo" role="img" /><span class="bank-name">Wells Fargo</span>
+      </li>
+      <li role="option" data-bank="Citibank"               data-mortgage-rate="0.0560" data-personal-rate="0.1350" data-auto-rate="0.0670" data-biz-rate="0.0850">
+        <img src="images/citibank.svg" alt="Citibank logo" role="img" /><span class="bank-name">Citibank</span>
+      </li>
+      <li role="option" data-bank="Capital One"            data-mortgage-rate="0.0545" data-personal-rate="0.1375" data-auto-rate="0.0700" data-biz-rate="0.0880">
+        <img src="images/capital-one.svg" alt="Capital One logo" role="img" /><span class="bank-name">Capital One</span>
+      </li>
+      <li role="option" data-bank="PNC Bank"               data-mortgage-rate="0.0552" data-personal-rate="0.1420" data-auto-rate="0.0710" data-biz-rate="0.0900">
+        <img src="images/pnc.svg" alt="PNC Bank logo" role="img" /><span class="bank-name">PNC Bank</span>
+      </li>
+      <li role="option" data-bank="U.S. Bank"              data-mortgage-rate="0.0548" data-personal-rate="0.1380" data-auto-rate="0.0695" data-biz-rate="0.0870">
+        <img src="images/us-bank.svg" alt="U.S. Bank logo" role="img" /><span class="bank-name">U.S. Bank</span>
+      </li>
+      <li role="option" data-bank="Truist Bank"            data-mortgage-rate="0.0563" data-personal-rate="0.1400" data-auto-rate="0.0705" data-biz-rate="0.0895">
+        <img src="images/truist.svg" alt="Truist Bank logo" role="img" /><span class="bank-name">Truist Bank</span>
+      </li>
+      <li role="option" data-bank="Ally Bank"              data-mortgage-rate="0.0535" data-personal-rate="0.1360" data-auto-rate="0.0675" data-biz-rate="0.0860">
+        <img src="images/ally.svg" alt="Ally Bank logo" role="img" /><span class="bank-name">Ally Bank</span>
+      </li>
+      <li role="option" data-bank="Discover Bank"          data-mortgage-rate="0.0540" data-personal-rate="0.1390" data-auto-rate="0.0680" data-biz-rate="0.0885">
+        <img src="images/discover.svg" alt="Discover Bank logo" role="img" /><span class="bank-name">Discover Bank</span>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+        <button class="btn" id="calculate" disabled>Calculate</button>
+      </div>
+
+      <!-- Results Card -->
+      <div class="card results pro">
+        <div class="results-body">
+          <div class="primary-result">
+            <div class="label">Monthly Payment</div>
+            <div class="value" id="monthly">$0.00</div>
+            <small class="note">estimate</small>
+          </div>
+          <div class="other-results">
+            <div class="item">
+              <div class="label">APR</div>
+              <div class="value" id="apr">0.00%</div>
+            </div>
+            <div class="item">
+              <div class="label">Total Cost</div>
+              <div class="value" id="totalCost">$0.00</div>
+            </div>
+            <div class="item">
+              <div class="label">Adjusted Rate</div>
+              <div class="value" id="usedRate">0.00%</div>
+            </div>
+          </div>
+        </div>
+        <div class="results-footer">
+          <button class="btn" id="showSchedule" disabled>Show Amortization Schedule</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- AMORTIZATION SCHEDULE -->
+    <section id="schedule" class="schedule" style="display:none;">
+      <h2>Amortization Schedule</h2>
+      <table id="amortTable">
+        <thead>
+          <tr>
+            <th>#</th><th>Payment</th><th>Interest</th><th>Principal</th><th>Balance</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <a id="exportCsv" class="btn" download="schedule.csv">Export CSV</a>
+    </section>
+<section id="articles" class="carousel-section">
+  <div class="container">
+    <h2>Discover <strong>our latest articles</strong></h2>
+    <div class="carousel-wrapper">
+      <button class="nav nav-left" aria-label="Previous">&lsaquo;</button>
+      <div class="carousel-track-container">
+        <ul class="carousel-track">
+          <li class="carousel-card">
+            <a href="effective-debt-strategies.html" class="card-link">
+              <div class="card-inner">
+                <img src="images/im40.jpg" alt="Which Strategies Should You Adopt to Repay Your Debts?" />
+                <div class="card-overlay">
+                  <p>Which Strategies Should You Adopt to Repay Your Debts?</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="carousel-card">
+            <a href="best-banks-usa.html" class="card-link">
+              <div class="card-inner">
+                <img src="images/im80.jpg" alt="Top U.S. Banks 2025: Quick Guide" />
+                <div class="card-overlay">
+                  <p>Top U.S. Banks 2025: Quick Guide</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="carousel-card">
+            <a href="section-899-offshore-ip.html" class="card-link">
+              <div class="card-inner">
+                <img src="images/im50.jpg" alt="Offshore IP Just Got Taxed: Inside the Global Ripple Effect of Section 899" />
+                <div class="card-overlay">
+                  <p>Offshore IP Just Got Taxed: Inside the Global Ripple Effect of Section 899</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="carousel-card">
+            <a href="crypto-guide-usa.html" class="card-link">
+              <div class="card-inner">
+                <img src="images/im1.jpg" alt="Crypto for Beginners: Understanding Cryptocurrency and How to Get Started" />
+                <div class="card-overlay">
+                  <p>Crypto for Beginners: Understanding Cryptocurrency and How to Get Started</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="carousel-card">
+            <a href="best-budgeting-apps-usa.html" class="card-link">
+              <div class="card-inner">
+                <img src="images/im4.jpg" alt="Best Budgeting Apps for Personal Finance in the U.S." />
+                <div class="card-overlay">
+                  <p>Best Budgeting Apps for Personal Finance in the U.S.</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="carousel-card">
+            <a href="us-banking-credit.html" class="card-link">
+              <div class="card-inner">
+                <img src="images/im6.jpg" alt="What Should You Know About Borrowing in the U.S. in 2025?" />
+                <div class="card-overlay">
+                  <p>What Should You Know About Borrowing in the U.S. in 2025?</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="carousel-card">
+            <a href="5article.html" class="card-link">
+              <div class="card-inner">
+                <img src="images/im9.jpg" alt="How to Take Advantage of Buy Now, Pay Later (BNPL) Without Falling Into the Trap" />
+                <div class="card-overlay">
+                  <p>How to Take Advantage of Buy Now, Pay Later (BNPL) Without Falling Into the Trap?</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="carousel-card">
+            <a href="robo-advisors-guide.html" class="card-link">
+              <div class="card-inner">
+                <img src="images/im3.jpg" alt="Should You Use a Robo-Advisor to Manage Your Retirement Portfolio?" />
+                <div class="card-overlay">
+                  <p>Should You Use a Robo-Advisor to Manage Your Retirement Portfolio?</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="carousel-card">
+            <a href="cut-costs-inflation.html" class="card-link">
+              <div class="card-inner">
+                <img src="images/im13.jpg" alt="How Can You Cut Costs Without Sacrificing Your Lifestyle During Inflation?" />
+                <div class="card-overlay">
+                  <p>How Can You Cut Costs Without Sacrificing Your Lifestyle During Inflation?</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="carousel-card">
+            <a href="pay-off-debt.html" class="card-link">
+              <div class="card-inner">
+                <img src="images/im17.jpg" alt="How Can I Pay Off My Debts More Effectively?" />
+                <div class="card-overlay">
+                  <p>How Can I Pay Off My Debts More Effectively?</p>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <button class="nav nav-right" aria-label="Next">&rsaquo;</button>
+    </div>
+    <div class="carousel-indicators"></div>
+  </div>
+
+  <!-- Shuffle items on page load -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const track = document.querySelector('.carousel-track');
+      const items = Array.from(track.children);
+      // Fisher-Yates shuffle
+      for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        track.appendChild(items[j]);
+        items.splice(j, 1);
+      }
+      // Append remaining
+      items.forEach(item => track.appendChild(item));
+    });
+  </script>
+</section>
+
+
+
+
+
+    <section class="loan-info">
+  <h2>Understanding Your Loan Estimate</h2>
+  <p>
+    Our LoanPro calculator breaks down your loan into clear, actionable figures. Follow the steps below to see how we arrive at your monthly payment, APR, and total cost.
+  </p>
+
+  <h3>1. Enter Your Loan Details</h3>
+  <ol class="steps-list">
+    <li>Select the <strong>loan type</strong> (Mortgage, Personal, Auto, Business) to load the correct input fields.</li>
+    <li>Set the <strong>duration</strong> in years and your <strong>FICO credit score</strong>.</li>
+    <li>Toggle the <strong>Auto‑Pay Discount</strong> if you plan to set up automatic payments (saves you 0.50%).</li>
+    <li>Provide the <strong>principal amount</strong> (home price, requested funds, vehicle cost, or business loan size).</li>
+    <li>Choose a <strong>down payment</strong> percentage or profile tier for mortgage loans.</li>
+    <li>Pick a <strong>bank</strong> to compare their current interest rates.</li>
+  </ol>
+
+  <h3>2. How We Calculate Your Payment</h3>
+  <p>
+    We use the standard amortization formula to compute your fixed monthly payment:
+  </p>
+  <div class="formula">
+    <div class="math">M = P × <em>r</em> × (1 + <em>r</em>)<sup>n</sup> ÷ [(1 + <em>r</em>)<sup>n</sup> − 1]</div>
+    <small>where</small>
+    <ul class="result-list">
+      <li><strong>M</strong> = monthly payment</li>
+      <li><strong>P</strong> = principal loan amount after down payment</li>
+      <li><strong>r</strong> = monthly interest rate (annual rate ÷ 12)</li>
+      <li><strong>n</strong> = total number of payments (years × 12)</li>
+    </ul>
+  </div>
+
+  <h3>3. Interpreting Your Results</h3>
+  <ul class="result-list">
+    <li><strong>Monthly Payment:</strong> What you’ll pay each month, including principal and interest.</li>
+    <li><strong>APR (Annual Percentage Rate):</strong> Your true yearly cost including fees and discounts.</li>
+    <li><strong>Total Cost:</strong> Sum of all payments over the lifetime of the loan.</li>
+    <li><strong>Adjusted Rate:</strong> Final interest rate after applying any auto‑pay discount or credit-score adjustments.</li>
+  </ul>
+
+  <h3>4. Viewing the Amortization Schedule</h3>
+  <p>
+    Click <strong>“Show Amortization Schedule”</strong> to see a month‑by‑month breakdown of principal vs. interest. You can also export this table as a CSV for your records.
+  </p>
+
+  <div class="tips">
+    <strong>Pro Tip:</strong> Increasing your down payment by just 5% can significantly lower your total interest paid. Always compare multiple banks to find the best APR for your credit score!
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="footer-top container">
+    <div class="footer-col">
+      <h4>About LoanPro</h4>
+      <p>Your trusted partner for clear, professional loan simulations and financial guidance.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+     <ul>
+  <li><a href="#simulator">Mortgage Calculator</a></li>
+  <li><a href="#simulator">Personal Loans</a></li>
+  <li><a href="#simulator">Auto Loans</a></li>
+  <li><a href="#simulator">Business Loans</a></li>
+</ul>
+
+
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+     <ul>
+  <li><a href="#articles">Latest Articles</a></li>
+  <li><a href="best-banks-usa.html">FAQ</a></li>
+  <li><a href="support.html">Support Center</a></li>
+  <li><a href="contact.html">Contact Us</a></li>
+</ul>
+
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="#terms">Terms of Use</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+    <div class="footer-col newsletter">
+      <h4>Stay Connected</h4>
+      <form id="newsletter-form">
+        <input type="email" placeholder="Your email address" required />
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="social-icons">
+        <!-- Facebook -->
+<!-- Facebook -->
+<a href="#" aria-label="Facebook">
+  <svg xmlns="http://www.w3.org/2000/svg" class="feather feather-facebook" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+  </svg>
+</a>
+
+<!-- Twitter -->
+<a href="#" aria-label="Twitter">
+  <svg xmlns="http://www.w3.org/2000/svg" class="feather feather-twitter" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
+    <path d="M23 3a10.9 10.9 0 0 1-3.1.9 4.4 4.4 0 0 0-7.5 4v1A10.7 10.7 0 0 1 3 4s-4 9 5 13a11.7 11.7 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.1-.8A7.7 7.7 0 0 0 23 3z"/>
+  </svg>
+</a>
+
+
+    <!-- LinkedIn -->
+<a href="#" aria-label="LinkedIn">
+  <svg xmlns="http://www.w3.org/2000/svg" class="feather feather-linkedin" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
+    <path d="M16 8a6 6 0 0 1 6 6v8h-4v-8a2 2 0 0 0-4 0v8h-4v-8a6 6 0 0 1 6-6z"/>
+    <rect x="2" y="9" width="4" height="12"/>
+    <circle cx="4" cy="4" r="2"/>
+  </svg>
+</a>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom container">
+  <div class="footer-logo">
+   
+    <a href="#" class="logo">LoanPro<span>.us</span></a>
+  </div>
+  <div class="footer-copy">
+    &copy; 2025 LoanPro. All rights reserved.
+    </div>
+    <div class="footer-links">
+      <a href="#sitemap">Sitemap</a>
+      <a href="#accessibility">Accessibility</a>
+      <select aria-label="Select Language" id="lang-select">
+        <option value="en" selected>English</option>
+        <option value="fr">Français</option>
+        <option value="es">Español</option>
+      </select>
+    </div>
+  </div>
+</footer>
+
+
+  </main>
+
+
+  <!-- SCRIPTS -->
+  <script src="js/carousel.js"></script>
+  <script src="js/simulator.js"></script>
+</body>
+</html>
+
