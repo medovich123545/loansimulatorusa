@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2500" height="314" viewBox="0 0 2500 314">
+  <defs>
+    <clipPath id="clip-Web_1920_1">
+      <rect width="2500" height="314"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_1" data-name="Web 1920 – 1" clip-path="url(#clip-Web_1920_1)">
+    <rect width="2500" height="314" fill="#fff"/>
+    <text id="capitalone" transform="translate(489 222)" fill="#585892" font-size="295" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">capitalone</tspan></text>
+    <text id="c" transform="matrix(-0.999, 0.035, -0.035, -0.999, 1902.507, 27.1)" fill="#e3093d" font-size="308" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">c</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2500" height="317" viewBox="0 0 2500 317">
+  <defs>
+    <clipPath id="clip-Web_1920_1">
+      <rect width="2500" height="317"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_1" data-name="Web 1920 – 1" clip-path="url(#clip-Web_1920_1)">
+    <rect width="2500" height="317" fill="#ee1414"/>
+    <text id="Wells_Fargo" data-name="Wells Fargo" transform="translate(226 237)" fill="#bcc818" font-size="318" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Wells Fargo</tspan></text>
+  </g>
+</svg>

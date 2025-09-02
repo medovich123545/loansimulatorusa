@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2500" height="314" viewBox="0 0 2500 314">
+  <defs>
+    <clipPath id="clip-Web_1920_1">
+      <rect width="2500" height="314"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_1" data-name="Web 1920 – 1" clip-path="url(#clip-Web_1920_1)">
+    <rect width="2500" height="314" fill="#fff"/>
+    <g id="Chase_idz_PRbjl7_0" transform="translate(1390.9 483)">
+      <g id="Groupe_1" data-name="Groupe 1" transform="translate(85.1 -471)">
+        <path id="Tracé_28" data-name="Tracé 28" d="M-387.5,441a6.627,6.627,0,0,0-6.7,6.7v49.6h131.1L-322.8,441Z" transform="translate(490.9 -441)" fill="#126bc5"/>
+        <path id="Tracé_29" data-name="Tracé 29" d="M-258.9,512.4a6.627,6.627,0,0,0-6.7-6.7h-49.6V636.8l56.3-59.7S-258.9,512.4-258.9,512.4Z" transform="translate(490.9 -385)" fill="#126bc5"/>
+        <path id="Tracé_30" data-name="Tracé 30" d="M-330.3,641a6.627,6.627,0,0,0,6.7-6.7V584.7H-454.7L-395,641Z" transform="translate(458.9 -385)" fill="#126bc5"/>
+        <path id="Tracé_31" data-name="Tracé 31" d="M-458.9,569.6a6.627,6.627,0,0,0,6.7,6.7h49.6V446l-56.3,59.7Z" transform="translate(458.9 -441)" fill="#126bc5"/>
+      </g>
+    </g>
+    <text id="chase" transform="translate(296 235)" fill="#0d0d0d" font-size="335" font-family="Cascadia Code"><tspan x="0" y="0">chase</tspan></text>
+  </g>
+</svg>
