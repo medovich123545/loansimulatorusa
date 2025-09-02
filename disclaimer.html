@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disclaimer | LoanPro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styless.css" />
+
+  <style>
+    /* ————————— Container spacing ————————— */
+    main.container {
+      padding: 6rem 1.5rem 4rem; /* top / horizontal / bottom */
+    }
+
+    /* ————————— Disclaimer text styling ————————— */
+    .disclaimer h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--clr-text);
+      text-align: center;
+    }
+    .disclaimer p {
+      margin-bottom: 1rem;
+      color: var(--clr-text-light);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* ————————— Mobile adjustments ————————— */
+    @media (max-width: 640px) {
+      main.container {
+        padding: 4rem 1rem 2rem;
+      }
+      .disclaimer h1 {
+        font-size: 2rem;
+      }
+      .disclaimer p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- App Bar -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">LoanPro<span>.us</span></a>
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="index.html">Simulator</a></li>
+          <li><a href="index.html#schedule">Schedule</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Disclaimer Content -->
+  <main class="container" style="max-width: 900px; margin: 0 auto;">
+    <section class="disclaimer">
+      <h1>Disclaimer</h1>
+      <p>
+        The information provided by <strong>LoanPro</strong> is for general informational purposes only. All
+        information on the site and in the loan simulator is provided in good faith; however, we make no
+        representation or warranty of any kind, express or implied, regarding the accuracy, adequacy,
+        validity, or completeness of any information.
+      </p>
+      <p>
+        The loan simulation is a tool for estimation only. It does not constitute an offer or a binding
+        financial agreement. You must consult directly with banks or financial institutions for official
+        quotes or loan offers.
+      </p>
+      <p>
+        LoanPro shall not be held liable for any loss or damage incurred as a result of the use of the site
+        or reliance on any information provided on the site. Your use of the site and your reliance on any
+        information is solely at your own risk.
+      </p>
+      <p>
+        The site may contain links to third-party websites or content. We do not monitor or check such
+        external links, and LoanPro is not responsible for any third-party content accessed through
+        our site.
+      </p>
+      <p>
+        We reserve the right to make additions, deletions, or modifications to the content or simulator at
+        any time without prior notice.
+      </p>
+      <p>
+        This disclaimer shall be governed by and construed in accordance with the laws of the United
+        States. Any disputes relating to this disclaimer will be subject to the jurisdiction of the
+        competent courts of the United States.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 LoanPro. All rights reserved.
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/header.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/simulator.js"></script>
+</body>
+</html>
