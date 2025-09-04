@@ -30,63 +30,88 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
 
+ 
   <!-- Styles -->
   <link rel="stylesheet" href="tes3.css" />
 
+  <style>
+    .highlight mark {
+      background-color: yellow;
+      color: black;
+    }
+  </style>
 </head>
 <body>
-  <!-- =========================
-       HEADER / NAV + SEARCH
-  ========================= -->
-  <header>
-    <div class="header-inner">
-      <div class="logo">
-        MonBlog<span>.fr</span>
-      </div>
-      <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-        <li><a href="index.html">Simulator</a></li>
-        <li><a href="support.html">Support</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <!-- Search form -->
-      <form class="search-form" action="#" method="get">
-        <div class="search-wrapper">
-          <input
-            type="text"
-            id="header-search-input"
-            class="search-input"
-            placeholder="Search..."
-            aria-label="Search content"
-            autocomplete="off"
-          />
-        </div>
-      </form>
+<header class="site-header">
+  <div class="container header-inner">
+    <!-- Ligne 1 : logo + hamburger -->
+    <div class="header-top">
+      <a href="index.html" class="logo">
+        <img src="images/bank-of-america.svg" alt="LoanPro Logo" class="logo-img" />
+      </a>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </header>
 
-  <!-- HERO SECTION -->
-  <div class="container" id="search-container">
-    <section class="hero">
-      <div class="hero-text">
-        <h1>What Should You Know About Borrowing in the U.S. in 2025?</h1>
-        <p>
-          In this article, you’ll get a clear overview of the current U.S. banking and credit landscape in 2025. It explains how different types of lenders—national and regional banks, online fintechs, and credit unions—offer varying loan rates, terms, and eligibility rules. You’ll learn about typical interest rates for personal, auto, mortgage, student, and business loans, and how factors like your credit score and membership requirements affect what you pay. The article also breaks down loan lengths and amounts, helping you understand what to expect when borrowing. With interest rates still higher than before the pandemic but showing signs of easing, it highlights the importance of shopping around and comparing options to find the best fit for your financial goals. Whether you’re buying a home, financing a car, or managing debt, this guide equips you to make smarter borrowing decisions in today’s market.
-        </p>
+    <!-- Ligne 2 : barre de recherche -->
+    <form class="search-form" action="#" method="get">
+      <div class="search-wrapper">
+        <input
+          type="text"
+          id="header-search-input"
+          name="query"
+          class="search-input"
+          placeholder="Search..."
+          aria-label="Search content"
+          autocomplete="off"
+        />
       </div>
-      <div class="hero-image">
-        <img src="images/photo-moi.jpg" alt="Portrait de Marie Dupont incliné" />
-        <div class="bio">
-          <h2>Biography</h2>
-          <p>Hello! My name is Mohamed Saoudi.</p>
-        </div>
-      </div>
-    </section>
+    </form>
+
+    <!-- Menu mobile stylisé -->
+    <nav class="main-nav" id="main-nav">
+      <ul>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="index.html">Simulator</a></li>
+        <li><a href="index.html">Schedule</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </div>
+</header>
 
-  <!-- ARTICLES TEASERS -->
+<main>
+  <div class="container">
+    <!-- Hero -->
+   <section class="hero-card">
+  <div class="profile">
+    <!-- Colonne gauche -->
+    <div class="profile-left">
+      <img src="images/photo-moi.jpg" alt="Portrait de Mohamed Saoudi" class="avatar" />
+      <span class="tag">Mohamed Saoudi, Finance Writer</span>
+    </div>
+
+    <!-- Colonne droite -->
+    <div class="profile-right">
+        <h1>Offshore IP Just Got Taxed: Inside the Global Ripple Effect of Section 899</h1>
+        <p>In this article, we take a closer look at Section 899—a groundbreaking rule that introduces a minimum U.S.
+           tax on offshore-held patents, trademarks, and software IP. We’ll show you how it’s shifting global investment patterns, putting the brakes on profit-shifting strategies,
+           and sparking a new conversation about where innovation really belongs.
+.</p>
+      <div class="cta-buttons">
+        <a href="index.html" class="btn btn-primary">Try Simulator</a>
+        <a href="contact.html" class="btn btn-outline">Contact Me</a>
+        <a href="index.html" class="btn btn-primary">Start Your Plan</a>
+        <a href="privacy.html" class="btn btn-outline">Learn About Privacy</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- =========================
+       ARTICLES RÉCENTS (TEASERS)
+  ========================= -->
   <div class="container">
     <section class="article-teasers" aria-label="Articles récents">
       <div class="teaser-card">
@@ -334,13 +359,97 @@
   <!-- BACK TO TOP BUTTON -->
   <button id="backToTop" aria-label="Retour en haut">↑</button>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      © 2025 – MonBlog.fr. Créé par Moi‐même. Tous droits réservés.
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>About LoanPro</h4>
+        <p>Your trusted partner for smart financial tools and guides.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="index.html">Simulator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h4>Newsletter</h4>
+        <form action="#">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
     </div>
-  </footer>
 
-  <script src="js/article.js"></script>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2025 LoanPro. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <select id="lang-select">
+          <option value="en">English</option>
+      
+        </select>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+const searchInput = document.getElementById('header-search-input');
+const mainContent = document.querySelector('main');
+
+// Supprime les surlignages précédents
+function removeHighlights() {
+  mainContent.querySelectorAll('mark').forEach(mark => {
+    const parent = mark.parentNode;
+    parent.replaceChild(document.createTextNode(mark.textContent), mark);
+    parent.normalize();
+  });
+}
+
+// Fonction pour surligner le texte
+function highlightText(text) {
+  if (!text) return;
+  
+  const regex = new RegExp(text, 'gi');
+
+  // Parcourir tous les éléments enfants du main
+  const elements = mainContent.querySelectorAll('p, li, h1, h2, h3, h4, h5, h6, span');
+  
+  elements.forEach(el => {
+    el.innerHTML = el.textContent.replace(regex, '<mark>$&</mark>');
+  });
+}
+
+// Événement sur la barre de recherche
+searchInput.addEventListener('input', () => {
+  removeHighlights();
+  const query = searchInput.value.trim();
+  highlightText(query);
+});
+</script>
+<script>const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('.main-nav');
+
+hamburger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  nav.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', nav.classList.contains('open'));
+});
+
+// Fermer le menu quand on clique en dehors
+document.addEventListener('click', (e) => {
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    nav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', false);
+  }
+});
+</script>
+
 </body>
 </html>
