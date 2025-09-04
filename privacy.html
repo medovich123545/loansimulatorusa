@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Privacy Policy | LoanPro</title>
+<!-- Styles -->
+  <link rel="stylesheet" href="tes3.css" />
   <style>
     /* ---------------------------
        RESET DE BASE
@@ -36,85 +38,7 @@
 
     /* ---------------------------
        HEADER / NAV
-    --------------------------- */
-    header {
-      position: sticky;
-      top: 0;
-      background-color: #fff;
-      z-index: 1000;
-      border-bottom: 1px solid #e0e0e0;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      margin-bottom: 40px;
-    }
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px;
-      max-width: 900px;
-      margin: 0 auto;
-      gap: 20px;
-    }
-    .logo {
-      font-size: 1.875rem; /* 30px */
-      font-weight: 600;
-      color: #1565c0;
-      letter-spacing: -1px;
-      font-family: 'Playfair Display', serif;
-    }
-    .logo span {
-      color: #333;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      font-weight: 600;
-    }
-    nav li {
-      font-size: 0.9rem;
-    }
-
-    /* ---------------------------
-       BARRE DE RECHERCHE (HEADER)
-    --------------------------- */
-    .search-form {
-      display: flex;
-      align-items: center;
-    }
-    .search-wrapper {
-      position: relative;
-      width: 200px;
-    }
-    .search-wrapper::before {
-      content: "";
-      position: absolute;
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 1rem;
-      color: #aaa;
-      pointer-events: none;
-    }
-    .search-input {
-      width: 100%;
-      padding: 0.5rem 0.75rem 0.5rem 2.2rem;
-      font-size: 0.9rem;
-      border: 1px solid #ccc;
-      border-radius: 20px;
-      background-color: #fff;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-    .search-input:focus {
-      outline: none;
-      border-color: #d61c59;
-      box-shadow: 0 2px 8px rgba(214, 28, 89, 0.25);
-    }
-    .search-input::placeholder {
-      color: #999;
-    }
-
+  
     /* ---------------------------
        CONTENEUR PRINCIPAL
     --------------------------- */
@@ -171,51 +95,50 @@
       color: #777;
     }
 
-    /* ---------------------------
-       RESPONSIVITÉ
-    --------------------------- */
-    @media (max-width: 640px) {
-      .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-      nav ul {
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-      .search-wrapper {
-        width: 140px;
-      }
-      .privacy-box {
-        padding: 30px 15px;
-      }
-      h1 {
-        font-size: 2rem;
-      }
-      h2 {
-        font-size: 1.5rem;
-      }
-    }
+   
   </style>
 </head>
 <body>
 
   <!-- HEADER / NAV + RECHERCHE -->
-  <header>
-    <div class="header-inner">
-      <div class="logo">LoanPro<span>.us</span></div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#simulator">Simulator</a></li>
-          <li><a href="#schedule">Schedule</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      
+  <header class="site-header">
+  <div class="container header-inner">
+    <!-- Ligne 1 : logo + hamburger -->
+    <div class="header-top">
+      <a href="index.html" class="logo">
+        <img src="images/logo3.svg" alt="LoanPro Logo" class="logo-img" />
+      </a>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </header>
+
+    <!-- Ligne 2 : barre de recherche -->
+    <form class="search-form" action="#" method="get">
+      <div class="search-wrapper">
+        <input
+          type="text"
+          id="header-search-input"
+          name="query"
+          class="search-input"
+          placeholder="Search..."
+          aria-label="Search content"
+          autocomplete="off"
+        />
+      </div>
+    </form>
+
+    <!-- Menu mobile stylisé -->
+    <nav class="main-nav" id="main-nav">
+      <ul>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="index.html">Simulator</a></li>
+        <li><a href="index.html">Schedule</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
   <!-- PRIVACY POLICY CONTENT -->
   <main class="container">
@@ -275,9 +198,97 @@
     </div>
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    &copy; 2025 LoanPro. All rights reserved.
-  </footer>
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>About LoanPro</h4>
+        <p>Your trusted partner for smart financial tools and guides.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="index.html">Simulator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h4>Newsletter</h4>
+        <form action="#">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2025 LoanPro. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <select id="lang-select">
+          <option value="en">English</option>
+      
+        </select>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+const searchInput = document.getElementById('header-search-input');
+const mainContent = document.querySelector('main');
+
+// Supprime les surlignages précédents
+function removeHighlights() {
+  mainContent.querySelectorAll('mark').forEach(mark => {
+    const parent = mark.parentNode;
+    parent.replaceChild(document.createTextNode(mark.textContent), mark);
+    parent.normalize();
+  });
+}
+
+// Fonction pour surligner le texte
+function highlightText(text) {
+  if (!text) return;
+  
+  const regex = new RegExp(text, 'gi');
+
+  // Parcourir tous les éléments enfants du main
+  const elements = mainContent.querySelectorAll('p, li, h1, h2, h3, h4, h5, h6, span');
+  
+  elements.forEach(el => {
+    el.innerHTML = el.textContent.replace(regex, '<mark>$&</mark>');
+  });
+}
+
+// Événement sur la barre de recherche
+searchInput.addEventListener('input', () => {
+  removeHighlights();
+  const query = searchInput.value.trim();
+  highlightText(query);
+});
+</script>
+<script>const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('.main-nav');
+
+hamburger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  nav.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', nav.classList.contains('open'));
+});
+
+// Fermer le menu quand on clique en dehors
+document.addEventListener('click', (e) => {
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    nav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', false);
+  }
+});
+</script>
+
 </body>
 </html>
