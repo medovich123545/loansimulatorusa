@@ -1,66 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Pages principales -->
   <url>
     <loc>https://www.loansimulatorusa.com/</loc>
   </url>
-
   <url>
     <loc>https://www.loansimulatorusa.com/best-banks-usa.html</loc>
   </url>
-
   <url>
     <loc>https://www.loansimulatorusa.com/best-budgeting-apps-usa.html</loc>
   </url>
-
   <url>
     <loc>https://www.loansimulatorusa.com/bnpl-guide.html</loc>
   </url>
-
-  <url>
-    <loc>https://www.loansimulatorusa.com/contact.html</loc>
-  </url>
-
   <url>
     <loc>https://www.loansimulatorusa.com/crypto-guide-usa.html</loc>
   </url>
-
   <url>
     <loc>https://www.loansimulatorusa.com/cut-costs-inflation.html</loc>
   </url>
-
-  <url>
-    <loc>https://www.loansimulatorusa.com/disclaimer.html</loc>
-  </url>
-
   <url>
     <loc>https://www.loansimulatorusa.com/effective-debt-strategies.html</loc>
   </url>
-
   <url>
     <loc>https://www.loansimulatorusa.com/pay-off-debt.html</loc>
   </url>
-
-  <url>
-    <loc>https://www.loansimulatorusa.com/privacy.html</loc>
-  </url>
-
   <url>
     <loc>https://www.loansimulatorusa.com/robo-advisors-guide.html</loc>
   </url>
-
   <url>
     <loc>https://www.loansimulatorusa.com/section-899-offshore-ip.html</loc>
   </url>
-
   <url>
     <loc>https://www.loansimulatorusa.com/us-banking-credit.html</loc>
   </url>
 
-  <!-- Nouvelle page ajoutée -->
+  <!-- Pages légales -->
+  <url>
+    <loc>https://www.loansimulatorusa.com/contact.html</loc>
+  </url>
+  <url>
+    <loc>https://www.loansimulatorusa.com/privacy.html</loc>
+  </url>
+  <url>
+    <loc>https://www.loansimulatorusa.com/disclaimer.html</loc>
+  </url>
+
+  <!-- Nouvelles pages ajoutées -->
   <url>
     <loc>https://www.loansimulatorusa.com/federal-reserve-usa-2025.html</loc>
-    <lastmod>2025-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://www.loansimulatorusa.com/fed-rate-cut.html</loc>
+  </url>
+  <url>
+    <loc>https://www.loansimulatorusa.com/richest-women-2025.html</loc>
+  </url>
+  <url>
+    <loc>https://www.loansimulatorusa.com/student-loans-2025.html</loc>
+  </url>
+  <url>
+    <loc>https://www.loansimulatorusa.com/student-loan-forgiveness-2025.html</loc>
+  </url>
+  <url>
+    <loc>https://www.loansimulatorusa.com/tesla-stock.html</loc>
   </url>
 
 </urlset>
